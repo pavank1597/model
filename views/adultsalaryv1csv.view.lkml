@@ -37,12 +37,6 @@ view: adultsalaryv1csv {
     sql: ${TABLE}.capital_loss ;;
   }
 
-  dimension: cid {
-    type: number
-    value_format_name: id
-    sql: ${TABLE}.cid ;;
-  }
-
   dimension: education {
     type: string
     sql: ${TABLE}.education ;;
