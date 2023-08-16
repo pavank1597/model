@@ -29,3 +29,6 @@ explore: adultsalaryv1csv {}
 
 explore: super_store {}
 
+explore: zak_processed_bv_1 {}
+
+explore: zakprocessedbv1csv {}
