@@ -2,7 +2,7 @@
 view: salary_with_currency {
   # The sql_table_name parameter indicates the underlying database table
   # to be used for all fields in this view.
-  sql_table_name: `test_dataset.salary_with_currency` ;;
+  sql_table_name: ui_test.salary_with_currency ;;
 
   # No primary key is defined for this view. In order to join this view in an Explore,
   # define primary_key: yes on a dimension that has no repeated values.
@@ -54,7 +54,7 @@ view: salary_with_currency {
 
   dimension: row_id {
     type: number
-    sql: ${TABLE}.rowId ;;
+    sql: ${TABLE}.row_id ;;
   }
   measure: count {
     type: count
