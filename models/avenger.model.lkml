@@ -34,3 +34,5 @@ explore: zak_processed_bv_1 {}
 explore: zakprocessedbv1csv {}
 
 explore: case_sensitive_test {}
+
+explore: salary_with_currency {}
