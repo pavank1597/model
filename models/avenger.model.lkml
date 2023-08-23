@@ -36,3 +36,5 @@ explore: zakprocessedbv1csv {}
 explore: case_sensitive_test {}
 
 explore: salary_with_currency {}
+
+explore: adult_salary_aggregation {}
