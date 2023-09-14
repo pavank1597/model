@@ -3,17 +3,23 @@ view: transaction_tellius {
   # The sql_table_name parameter indicates the underlying database table
   # to be used for all fields in this view.
   sql_table_name: ui_test.transaction_tellius ;;
+  drill_fields: [id]
 
-  # No primary key is defined for this view. In order to join this view in an Explore,
-  # define primary_key: yes on a dimension that has no repeated values.
+  # This primary key is the unique key for this table in the underlying database.
+  # You need to define a primary key in a view in order to join to other views.
 
+  dimension: id {
+    primary_key: yes
+    type: number
+    sql: ${TABLE}.Id ;;
+  }
     # Here's what a typical dimension looks like in LookML.
     # A dimension is a groupable field that can be used to filter query results.
-    # This dimension will be called "Brand" in Explore.
+    # This dimension will be called "Brand1" in Explore.
 
-  dimension: brand {
+  dimension: brand1 {
     type: string
-    sql: ${TABLE}.BRAND ;;
+    sql: ${TABLE}.brand1 ;;
   }
 
   dimension: brands {
@@ -41,16 +47,6 @@ view: transaction_tellius {
     sql: ${TABLE}.DATE ;;
   }
 
-  dimension: department {
-    type: string
-    sql: ${TABLE}.DEPARTMENT ;;
-  }
-
-  dimension: id {
-    type: number
-    sql: ${TABLE}.Id ;;
-  }
-
   dimension: number_of_records {
     type: number
     sql: ${TABLE}.NUMBER_OF_RECORDS ;;
@@ -70,11 +66,6 @@ view: transaction_tellius {
   dimension: payment_type {
     type: string
     sql: ${TABLE}.PAYMENT_TYPE ;;
-  }
-
-  dimension: region_customer {
-    type: string
-    sql: ${TABLE}.REGION_CUSTOMER ;;
   }
 
   dimension: revenue {
@@ -117,16 +108,12 @@ view: transaction_tellius {
     sql: ${TABLE}.STORE_TYPE ;;
   }
 
-  dimension: store_zip {
-    type: number
-    sql: ${TABLE}.STORE_ZIP ;;
-  }
-
   dimension: transaction_id {
     type: number
     sql: ${TABLE}.TRANSACTION_ID ;;
   }
   measure: count {
     type: count
+    drill_fields: [id]
   }
 }
