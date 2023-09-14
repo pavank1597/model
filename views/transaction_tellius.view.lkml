@@ -63,11 +63,6 @@ view: transaction_tellius {
     type: average
     sql: ${number_of_records} ;;  }
 
-  dimension: payment_type {
-    type: string
-    sql: ${TABLE}.PAYMENT_TYPE ;;
-  }
-
   dimension: revenue {
     type: number
     sql: ${TABLE}.REVENUE ;;
