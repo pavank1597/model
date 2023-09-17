@@ -11,7 +11,7 @@ view: organizations {
   dimension: organization_id {
     primary_key: yes
     type: string
-    sql: ${TABLE}.`Organization Id` ;;
+    sql: ${TABLE}.Organization_Id ;;
   }
     # Here's what a typical dimension looks like in LookML.
     # A dimension is a groupable field that can be used to filter query results.
@@ -50,7 +50,7 @@ view: organizations {
 
   dimension: number_of_employees {
     type: number
-    sql: ${TABLE}.`Number of employees` ;;
+    sql: ${TABLE}.Number_Of_Employees ;;
   }
 
   # A measure is a field that uses a SQL aggregate function. Here are defined sum and average
